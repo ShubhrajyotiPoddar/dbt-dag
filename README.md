@@ -244,10 +244,3 @@ dbt build
 A successful manual run of `dbt_dag` in the Airflow UI. It completed in about 1 minute 16 seconds with 7 task instances, each dbt model and test running as its own task:
 
 ![Successful dbt_dag run in the Airflow UI](docs/dag_run_success.png)
-
-## Security notes
-
-- The Snowflake credentials live only in the Airflow connection (Airflow's metadata database). Nothing sensitive is committed to this repository.
-- `.env`, `airflow_settings.yaml` and `profiles.yml` are listed in `.gitignore` and `.dockerignore` in case you add credentials to them later. Never commit them.
-- Use a dedicated Snowflake role and user for this project with least-privilege grants.
-- If a credential is ever committed by mistake, rotate it immediately; removing the file in a later commit does not remove it from Git history.
