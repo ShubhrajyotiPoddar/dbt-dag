@@ -1,0 +1,41 @@
+# Environment and secrets
+.env
+.env.*
+airflow_settings.yaml
+profiles.yml
+*.p8
+*.pem
+
+# Astro CLI / Airflow local state
+astro
+.astro/standalone/
+.astro/worktrees/
+.astro/*.local.yml
+.astro/*.local.yaml
+**/.astro/dbt_metadata.json
+**/.astro/manifest.slim.json
+airflow-webserver.pid
+webserver_config.py
+airflow.cfg
+airflow.db
+logs/
+
+# dbt
+target/
+dbt_packages/
+dbt_internal_packages/
+.user.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

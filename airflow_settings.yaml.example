@@ -1,0 +1,16 @@
+# Copy this file to airflow_settings.yaml and fill in real values.
+# airflow_settings.yaml is git-ignored and loaded by the Astro CLI on `astro dev start`.
+airflow:
+  connections:
+    - conn_id: snowflake_conn
+      conn_type: snowflake
+      conn_login: <snowflake_user>
+      conn_password: <snowflake_password>
+      conn_schema: dbt_schema
+      conn_extra:
+        account: <account_identifier>
+        warehouse: dbt_wh
+        database: dbt_db
+        role: <snowflake_role>
+  pools: []
+  variables: []

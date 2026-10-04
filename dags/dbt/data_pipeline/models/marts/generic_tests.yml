@@ -1,0 +1,16 @@
+models:
+  - name: fact_orders # represents which sql file to test
+    columns:
+      - name: order_key
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_tpch_orders')
+                field: order_key
+                severity: warn
+      - name: status_code
+        tests:
+          - accepted_values:
+              values: ['F', 'O', 'P']
